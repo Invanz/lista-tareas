@@ -1,0 +1,17 @@
+{
+  "name": "lista-tareas",
+  "version": "1.0.0",
+  "description": "ejercicio para ADA School",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ejercicio",
+    "lista",
+    "de",
+    "tareas"
+  ],
+  "author": "arturo",
+  "license": "ISC"
+}
