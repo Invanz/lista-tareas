@@ -2,8 +2,8 @@
   "name": "lista-tareas",
   "version": "1.0.0",
   "description": "ejercicio para ADA School",
-  "main": "index.js",
-  "type": "commonjs",
+  "main": "index.mjs",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
