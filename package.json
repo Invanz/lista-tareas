@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "ejercicio para ADA School",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,5 +14,8 @@
     "tareas"
   ],
   "author": "arturo",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
 }
