@@ -25,7 +25,16 @@ const keep = (option) => {
   option == "Y" ? script(false) : console.log("Adiós");
 };
 
-const script = (firstTime = true) => {
+async function newTask(description) {
+  console.log("calling...");
+  const result = await addTask(description);
+  console.log(result);
+  myInterface.question(texts.keepQuestion, (option) => {
+    keep(option);
+  });
+};
+
+function script(firstTime = true){
   firstTime ? console.log(texts.greetings) : console.log(texts.newRound);
   myInterface.question(texts.mainMenu, (option) => {
     switch (option) {
@@ -39,27 +48,30 @@ const script = (firstTime = true) => {
       case "2":
         // AGREGAR UNA TAREA
         myInterface.question(texts.addDescription, (description) => {
-          addTask(description);
-          myInterface.question(texts.keepQuestion, (option) => {
-            keep(option);
-          });
+          newTask(description);
         });
         break;
       case "3":
         // ELIMINAR UNA TAREA
         myInterface.question(texts.idTaskDelete, (id) => {
-          deleteTask(id);
-          myInterface.question(texts.keepQuestion, (option) => {
-            keep(option);
-          });
+          console.log("calling...");
+          deleteTask(id).then((resolve) => {
+            console.log(resolve);
+            myInterface.question(texts.keepQuestion, (option) => {
+              keep(option);
+            });
+          }); 
         });
         break;
       case "4":
         // MARCAR COMO COMPLETADA
         myInterface.question(texts.idTaskComplete, (id) => {
-          completeTask(id);
-          myInterface.question(texts.keepQuestion, (option) => {
-            keep(option);
+          console.log("calling...");
+          completeTask(id).then((resolve) => {
+            console.log(resolve);
+            myInterface.question(texts.keepQuestion, (option) => {
+              keep(option);
+            });
           });
         });
         break;
